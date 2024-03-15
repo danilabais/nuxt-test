@@ -15,6 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "nuxt": "^3.10.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
