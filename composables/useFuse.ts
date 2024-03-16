@@ -3,23 +3,29 @@ import type { MaybeRefOrGetter } from "@vueuse/shared";
 import { toValue } from "@vueuse/shared";
 
 type useFuseOptions = {
-  key: string;
+  keys: string[];
 };
 
 type useFuseTypes = {
   input: MaybeRefOrGetter<string>;
-  data: MaybeRefOrGetter<DataItem[]>;
+  data: MaybeRefOrGetter;
   options: useFuseOptions;
 };
 
-export const useFuse = <DataItem>({ input, data, options }: useFuseTypes) => {
-  const { key } = options;
+export const useFuse = ({ input, data, options }: useFuseTypes) => {
+  const { keys } = options;
   const results = computed(() => {
     if (!toValue(input)) {
       return data;
     }
-    return data.filter((el) => {
-      return el[key].toLowerCase().includes(toValue(input).toLowerCase());
+
+    return data.filter((item) => {
+      for (const key of keys) {
+        if (item[key] && item[key].toLowerCase().includes(toValue(input).toLowerCase())) {
+          return true;
+        }
+      }
+      return false;
     });
   });
 

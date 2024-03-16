@@ -5,3 +5,5 @@ export { default as UISearchInput } from "./inputs/UISearchInput/UISearchInput.v
 export { default as UIAvatarBase } from "./UIAvatarBase/UIAvatarBase.vue";
 export { default as UILoaderBase } from "./loaders/UILoaderBase/UILoaderBase.vue";
 export { default as UILoaderLayout } from "./loaders/UILoaderLayout/UILoaderLayout.vue";
+export { default as UITextareaBase } from "./UITextareaBase/UITextareaBase.vue";
+export { default as UIInputNumber } from "./inputs/UIInputNumber/UIInputNumber.vue";

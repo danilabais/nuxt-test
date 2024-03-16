@@ -12,16 +12,21 @@
       <UIInputBase v-model="search" placeholder="Enter username to search" />
     </div>
     <div :class="styles.list">
-      <NuxtLink v-for="user in results" :key="user.id" :to="'/' + item" :class="styles.user">
+      <NuxtLink
+        v-for="user in results"
+        :key="user.id"
+        :to="'/user/' + user.id"
+        :class="styles.user"
+      >
         <UserBase
           v-if="currentTab === tabsOptions[0].value"
           :src="user.avatar"
-          :nickname="user.first_name"
+          :nickname="[user.first_name, user.last_name].join(' ')"
         />
         <UserBase
           v-if="currentTab === tabsOptions[1].value"
-          :rating="getUserId({ id: user.id })"
-          :nickname="user.first_name"
+          :rating="usersStore.getUser({ id: user.id }).rating"
+          :nickname="[user.first_name, user.last_name].join(' ')"
         />
         <div>></div>
       </NuxtLink>
@@ -36,30 +41,27 @@
 </template>
 
 <script setup>
-import { UIButtonBase, UITabsBase, UIInputBase, UIAvatarBase } from "@/UI";
+import { UIButtonBase, UITabsBase, UIInputBase } from "@/UI";
 import { UserBase } from "@/entities";
 import styles from "./SidebarBase.module.scss";
 import { tabsOptions } from "./constants.js";
 import { ref } from "vue";
 import { SidebarController } from "./components";
-import { api } from "@/shared";
-import { config } from "@/app/config";
+import { useUsersStore } from "@/models";
+
+const usersStore = useUsersStore();
 
 const currentTab = ref(tabsOptions[0].value);
 const search = ref("");
 const isSidebarOpen = ref(true);
 
-// const { data, error } = await useAsyncData('users', () => api.get('/users'))
-
 const { data, refresh, pending } = await useApi("/users", {
   method: "GET",
 });
 
-const { getUserId } = useGetUserInfo();
-
 const { results } = useFuse({
   input: search,
   data: data.value.data,
-  options: { key: "first_name" },
+  options: { keys: ["first_name", "last_name"] },
 });
 </script>

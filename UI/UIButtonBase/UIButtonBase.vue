@@ -4,6 +4,6 @@
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import styles from "./UIButtonBase.module.scss";
 </script>
