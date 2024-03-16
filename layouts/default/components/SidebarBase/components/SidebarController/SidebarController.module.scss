@@ -1,0 +1,10 @@
+.sidebarController {
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
+  background: rgb(172, 172, 255);
+  padding: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  border-left: 1px solid var(--main-color);
+}

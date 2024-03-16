@@ -1,0 +1,16 @@
+<template>
+  <div :class="styles.user">
+    <UIAvatarBase
+      :rounded="true"
+      size="xs"
+      src="https://www.befunky.com/images/prismic/5ddfea42-7377-4bef-9ac4-f3bd407d52ab_landing-photo-to-cartoon-img5.jpeg?auto=avif,webp&format=jpg&width=863"
+    />
+
+    <div :class="styles.name">userName</div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import styles from "./UserBase.module.scss";
+import { UIAvatarBase } from "@/UI";
+</script>

@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  padding: 2px;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.item {
+  flex: 1;
+  text-align: center;
+  z-index: 10;
+  background: none;
+  padding: 10px;
+}
+.bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}

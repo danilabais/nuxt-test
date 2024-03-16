@@ -1,0 +1,13 @@
+.input {
+  padding: 10px;
+  background: none;
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 20px;
+  padding: 10px;
+  background: var(--bg-primary);
+}
