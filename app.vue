@@ -1,3 +1,4 @@
 <template>
-  <NuxtLayout> 3 </NuxtLayout>
+  <NuxtLoadingIndicator />
+  <NuxtLayout> </NuxtLayout>
 </template>

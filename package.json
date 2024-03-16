@@ -15,6 +15,9 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@vueuse/nuxt": "^10.9.0",
+    "axios": "^1.6.8",
+    "fuse.js": "^6.6.2",
     "normalize.css": "^8.0.1",
     "nuxt": "^3.10.3",
     "vue": "^3.4.21",
