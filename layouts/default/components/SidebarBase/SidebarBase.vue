@@ -9,7 +9,7 @@
   >
     <div :class="styles.header">
       <UITabsBase v-model="currentTab" :options="tabsOptions" />
-      <UIInputBase v-model="search" placeholder="Enter username to search" />
+      <UISearchInput v-model="search" placeholder="Enter username to search" />
     </div>
     <div :class="styles.list">
       <NuxtLink
@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import { UIButtonBase, UITabsBase, UIInputBase } from "@/UI";
+import { UIButtonBase, UITabsBase, UISearchInput } from "@/UI";
 import { UserBase } from "@/entities";
 import styles from "./SidebarBase.module.scss";
 import { tabsOptions } from "./constants.js";
