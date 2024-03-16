@@ -1,9 +1,11 @@
 <template>
   <div>
-    test
+    <SidebarBase />
 
     <slot />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { SidebarBase } from "./components";
+</script>
