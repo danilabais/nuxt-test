@@ -33,7 +33,7 @@
 import { UITextareaBase, UIInputNumber, UIButtonBase } from "@/UI";
 import styles from "./UserCard.module.scss";
 import { UserBase } from "@/entities";
-import { useUsersStore } from "@/models";
+import { useUsersStore } from "@/stores";
 import type { UserType } from "@/types";
 
 const route = useRoute();

@@ -25,6 +25,9 @@
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
+  "overrides": {
+    "vue": "latest"
+  },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxt/image": "^1.4.0",
