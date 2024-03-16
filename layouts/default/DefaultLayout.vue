@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <main>
     <SidebarBase />
     <div :class="styles.wrapper">
       <slot />
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">

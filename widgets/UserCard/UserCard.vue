@@ -18,7 +18,9 @@
     />
 
     <UIButtonBase
-      @click="usersStore.updateUser({ id: user.id, rating: userInfo.rating, info: userInfo.info })"
+      @click="
+        usersStore.updateUser({ id: user.id, rating: String(userInfo.rating), info: userInfo.info })
+      "
     >
       Save
     </UIButtonBase>
