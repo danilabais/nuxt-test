@@ -47,7 +47,7 @@ import styles from "./SidebarBase.module.scss";
 import { tabsOptions } from "./constants.js";
 import { ref } from "vue";
 import { SidebarController } from "./components";
-import { useUsersStore } from "@/models";
+import { useUsersStore } from "@/stores";
 
 const usersStore = useUsersStore();
 
