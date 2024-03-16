@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <main>
     <SidebarBase />
     <div :class="styles.wrapper">
       <slot />
     </div>
-  </div>
+  </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { SidebarBase } from "./components";
 import styles from "./DefaultLayout.module.scss";
 </script>

@@ -3,6 +3,7 @@
     <button
       v-for="option in options"
       :key="option.value"
+      type="button"
       :class="styles.item"
       @click="modelValue = option.value"
     >

@@ -1,5 +1,5 @@
 <template>
-  <div :class="[styles.user, styles[props]]">
+  <div :class="[styles.user, styles[props.direction]]">
     <UIAvatarBase v-if="props.src" :rounded="true" :size="props.size" :src="props.src" />
     <div v-if="props.rating">
       {{ props.rating }}
@@ -19,7 +19,7 @@ const props = withDefaults(
     src?: string;
     rating?: Number | undefined;
     size?: "xs" | "l";
-    direction?: string;
+    direction?: "column" | "row";
   }>(),
   {
     size: "xs",

@@ -1,5 +1,5 @@
 <template>
-  <div
+  <aside
     :class="[
       styles.wrapper,
       {
@@ -9,39 +9,40 @@
   >
     <div :class="styles.header">
       <UITabsBase v-model="currentTab" :options="tabsOptions" />
-      <UIInputBase v-model="search" placeholder="Enter username to search" />
+      <UISearchInput v-model="search" placeholder="Enter username to search" />
     </div>
-    <div :class="styles.list">
-      <NuxtLink
-        v-for="user in results"
-        :key="user.id"
-        :to="'/user/' + user.id"
-        :class="styles.user"
-      >
-        <UserBase
-          v-if="currentTab === tabsOptions[0].value"
-          :src="user.avatar"
-          :nickname="[user.first_name, user.last_name].join(' ')"
-        />
-        <UserBase
-          v-if="currentTab === tabsOptions[1].value"
-          :rating="usersStore.getUser({ id: user.id }).rating"
-          :nickname="[user.first_name, user.last_name].join(' ')"
-        />
-        <div>></div>
-      </NuxtLink>
-
-      <div v-if="!results.length">Sorry, no one found</div>
-    </div>
+    <ul :class="styles.list">
+      <li>
+        <NuxtLink
+          v-for="user in results"
+          :key="user.id"
+          :to="'/user/' + user.id"
+          :class="styles.user"
+        >
+          <UserBase
+            v-if="currentTab === tabsOptions[0].value"
+            :src="user.avatar"
+            :nickname="[user.first_name, user.last_name].join(' ')"
+          />
+          <UserBase
+            v-if="currentTab === tabsOptions[1].value"
+            :rating="usersStore.getUser({ id: user.id }).rating"
+            :nickname="[user.first_name, user.last_name].join(' ')"
+          />
+          <div>></div>
+        </NuxtLink>
+      </li>
+      <span v-if="!results.length" :class="styles.notFound">Sorry, no one found</span>
+    </ul>
     <UIButtonBase :class="styles.btn" :disabled="pending" @click="refresh">
       Update List
     </UIButtonBase>
     <SidebarController v-model="isSidebarOpen" />
-  </div>
+  </aside>
 </template>
 
 <script setup>
-import { UIButtonBase, UITabsBase, UIInputBase } from "@/UI";
+import { UIButtonBase, UITabsBase, UISearchInput } from "@/UI";
 import { UserBase } from "@/entities";
 import styles from "./SidebarBase.module.scss";
 import { tabsOptions } from "./constants.js";
