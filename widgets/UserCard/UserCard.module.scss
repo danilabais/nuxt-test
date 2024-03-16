@@ -1,0 +1,19 @@
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background: var(--bg-primary);
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.textarea {
+  flex: 1;
+}
+.error {
+  justify-content: center;
+  color: red;
+  font-size: 30px;
+}

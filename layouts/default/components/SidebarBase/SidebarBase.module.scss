@@ -8,6 +8,7 @@
   transition: transform 0.3s ease;
   position: fixed;
   box-shadow: 31px 0px 21px -20px rgba(0, 0, 0, 0.54);
+  z-index: 10;
   &.isSidebarOpen {
     transform: translateX(0);
   }

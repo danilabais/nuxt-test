@@ -11,7 +11,7 @@
 import styles from "./UIAvatarBase.module.scss";
 const sizes = {
   xs: 40,
-  s: 100,
+  l: 100,
 };
 
 type SizeType = keyof typeof sizes;
